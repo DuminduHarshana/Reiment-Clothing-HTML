@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout</title>
 </head>
+
 <body>
     <h1>Checkout</h1>
     <table>
@@ -20,24 +22,22 @@
     <p>Total Items: <span id="total-items"></span></p>
     <p>Tax: <span id="tax"></span></p>
     <p>Total: <span id="total"></span></p>
-    
+
     <script>
-        // Get a reference to the cart items container element
+
         const cartItemsContainer = document.getElementById('cart-items-table');
 
-        // Get a reference to the total items span
+
         const totalItems = document.getElementById('total-items');
 
-        // Get a reference to the tax span
+
         const tax = document.getElementById('tax');
 
-        // Get a reference to the total span
+
         const total = document.getElementById('total');
 
-        // Get the cart items from local storage
-        const cartItems = JSON.parse(localStorage.getItem('cart'));
 
-        // Create a new table row for each item in the cart and append it to the cart items container
+        const cartItems = JSON.parse(localStorage.getItem('cart'));
         for (let item of cartItems) {
             const row = document.createElement('tr');
             const nameCell = document.createElement('td');
@@ -49,14 +49,15 @@
             cartItemsContainer.appendChild(row);
         }
 
-        // Display the total number of items in the cart
+
         totalItems.textContent = cartItems.length;
 
-        // Calculate the tax and total and display them
+
         const subtotal = cartItems.reduce((acc, item) => acc + item.price, 0);
         const taxAmount = subtotal * 0.08;
         tax.textContent = taxAmount.toFixed(2);
         total.textContent = (subtotal + taxAmount).toFixed(2);
     </script>
 </body>
+
 </html>
