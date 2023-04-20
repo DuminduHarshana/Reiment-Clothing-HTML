@@ -12,86 +12,7 @@
     integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   <link rel="stylesheet" href="Styles/style.css">
 
-<style>
-.popup {
-  position: fixed;
-  display: none;
- top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 9999;
-  background-color: rgba(255, 255, 255, 0.8); 
-  border: 1px solid #ccc;
-  box-shadow: 0px 0px 10px #ccc;
-  padding: 20px;
-  border-radius: 10px;
-  width: 90%;
-  max-width: 300px;
-}
 
-  .popup form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .popup label {
-    font-size: 16px;
-    margin-bottom: 5px;
-  }
-  
-  .popup input[type="text"], 
-  .popup input[type="password"] {
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-    margin-bottom: 10px;
-    font-size: 16px;
-  }
-  
-  .popup input[type="checkbox"] {
-    margin-right: 5px;
-  }
-  
-  .popup label[for="remember"] {
-    color: #fff;
-    background-color: #c1a6ec;
-    padding: 5px;
-    border-radius: 5px;
-  }
-  
-  .popup input[type="submit"] {
-    background-color: #4CAF50;
-    color: #fff;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  .popup input[type="reset"] {
-    background-color: #ccc;
-    color: #fff;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  .popup a {
-    display: block;
-    text-align: right;
-    margin-top: 10px;
-    color: #888;
-    font-size: 14px;
-    text-decoration: none;
-  }
-  
-  .popup a:hover {
-    text-decoration: underline;
-  }
-  </style>
 
 </head>
 
@@ -99,75 +20,75 @@
   <source src="assets/vid.mp4" type="video/mp4">
   Your browser does not support HTML5 video.
 </video>
-  <!-- Navbar -->
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container">
-        <a class="navbar-brand" href="#">Raiment &reg;</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ml-auto">
+<!-- Navbar -->
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Raiment &reg;</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="home.html">Home</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="mens.html">Men</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Women.html">Women</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="a.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Contact Form.html">Contact Us</a>
+          </li>
+          <div class="aaaa">
             <li class="nav-item">
-              <a class="nav-link" href="home.html">Home</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="mens.html">Men</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="Women.html">Women</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="a.html">About Us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="Contact Form.html">Contact Us</a>
-            </li>
-            <div class="aaaa">
-            <li class="nav-item" >
               <a class="nav-link" onclick="show('popup')">Login</a>
               <div class="popup" id="popup">
                 <form action="" method="get" autocomplete="on">
                   <fieldset id="loginn">
-                      <label for="uname">User Name</label>
-                      <input type="text" name="uname" required placeholder="abc@gmail.com">
-  
-                  <br>
-                      <label for="pass">Password</label>
-                      <input type="text" name="pass" required placeholder="password">
-                  <br>
-                      <input type="checkbox" id="remember" name="rememer">
-                      <label for="remember">Remember my login information</label>
-                  <br>
-                      <input type="submit" value="Login">
-                      <input type="reset" value="Cancel">
-                  </fieldset>
-              </form>
-              <a href="#" onclick="hide('popup')">Close</a>
-              </div>
-            
-            </li>
-</div>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
+                    <label for="uname">User Name</label>
+                    <input type="text" name="uname" required placeholder="abc@gmail.com">
 
-  <!-- Header -->
-  <header class="jumbotron jumbotron-fluid">
-    <div class="container">
-      <h1 class="display-4">New Spring Collection for Men</h1>
-      <p class="lead">Discover the latest trends and styles for this season.</p>
-      <a href="#" class="btn btn-primary btn-lg">Shop Now</a>
+                    <br>
+                    <label for="pass">Password</label>
+                    <input type="text" name="pass" required placeholder="password">
+                    <br>
+                    <input type="checkbox" id="remember" name="rememer">
+                    <label for="remember">Remember my login information</label>
+                    <br>
+                    <input type="submit" value="Login">
+                    <input type="reset" value="Cancel">
+                  </fieldset>
+                </form>
+                <a href="#" onclick="hide('popup')">Close</a>
+              </div>
+
+            </li>
+          </div>
+        </ul>
+      </div>
     </div>
-  </header>
-  
-  
-  <body>
-   <section class="container my-5">
+  </nav>
+</header>
+
+<!-- Header -->
+<header class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">New Spring Collection for Men</h1>
+    <p class="lead">Discover the latest trends and styles for this season.</p>
+    <a href="#" class="btn btn-primary btn-lg">Shop Now</a>
+  </div>
+</header>
+
+
+<body>
+  <section class="container my-5">
     <h2 class="text-center mb-4">Featured Products</h2>
     <div class="row">
       <div class="col-lg-4 col-md-6 mb-4">
@@ -199,9 +120,9 @@
             <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
           </div>
         </div>
-        </div>
-      </section> 
- 
+      </div>
+  </section>
+
   <script src="scripts/myscripts.js"></script>
 </body>
 <html>
