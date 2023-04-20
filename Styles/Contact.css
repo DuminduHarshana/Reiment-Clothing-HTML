@@ -49,3 +49,6 @@ input[type=text],input[type=email], select, textarea {
         color: beige;
         text-align: center;
     }
+    nav {
+      position: fixed;
+    }

@@ -54,3 +54,6 @@ label {
   font-family: Arial, sans-serif;
 }
  
+nav {
+  position: fixed;
+}

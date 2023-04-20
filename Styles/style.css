@@ -133,3 +133,6 @@
     .popup a:hover {
       text-decoration: underline;
     }
+    nav {
+      position: fixed;
+    }
