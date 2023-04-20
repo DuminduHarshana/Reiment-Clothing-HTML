@@ -2,93 +2,67 @@
 <html lang="en">
 
 <head>
+    <link rel = "shortcut icon" type= "image/x-icon" href="Images/Logo.jpg">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-      body {
-        font-family: Arial, Helvetica, sans-serif;
-        margin: 0;
-        padding: 0;
-      }
-      .container {
-        max-width: 600px;
-        margin: 0 auto;
-        padding: 20px;
-      }
-      h1, h2, h3, h4, h5, h6 {
-        font-weight: bold;
-      }
-      .table th, .table td {
-        vertical-align: middle;
-      }
-      .table td:last-child {
-        text-align: right;
-      }
-      .table .text-muted {
-        font-style: italic;
-      }
-      .alert {
-        margin-top: 20px;
-      }
-      .btn-back {
-        margin-top: 20px;
-      }
-    </style>
-  </head>
-  <body>
+    <link rel="stylesheet" href="Styles/checkout.css">
+</head>
+
+<body>
     <div class="container">
-      <h1>Checkout</h1>
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Item</th>
-            <th>Price</th>
-          </tr>
-        </thead>
-        <tbody id="cart-items">
-        </tbody>
-        <tfoot>
-          <tr>
-            <td>Tax</td>
-            <td id="tax-amount"></td>
-          </tr>
-          <tr>
-            <td>Total</td>
-            <td id="total-amount"></td>
-          </tr>
-        </tfoot>
-      </table>
-      <div class="alert alert-info" role="alert">
-        Thank you for your purchase!
-      </div>
-      <button class="btn btn-primary btn-back" onclick="window.history.back()">Back to Cart</button>
+        <h1>Checkout</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody id="cart-items">
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>Tax</td>
+                    <td id="tax-amount"></td>
+                </tr>
+                <tr>
+                    <td>Total</td>
+                    <td id="total-amount"></td>
+                </tr>
+            </tfoot>
+        </table>
+        <div class="alert alert-info" role="alert">
+            Thank you for your purchase!
+        </div>
+        <button class="btn btn-primary btn-back" onclick="window.history.back()">Back to Cart</button>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script>
-      $(document).ready(function() {
-        // Get the URL parameters
-        const queryString = window.location.search;
-        const urlParams = new URLSearchParams(queryString);
-        const cartItems = JSON.parse(urlParams.get('items'));
-        const totalAmount = urlParams.get('total');
-        const taxAmount = urlParams.get('tax');
+        $(document).ready(function () {
 
-        // Populate the cart items table
-        const cartItemsTable = $('#cart-items');
-        cartItemsTable.empty();
-        for (let item of cartItems) {
-          const row = $('<tr></tr>');
-          const itemName = $('<td></td>').text(item.name);
-          const itemPrice = $('<td></td>').text('$' + item.price.toFixed(2));
-          row.append(itemName, itemPrice);
-          cartItemsTable.append(row);
-        }
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            const cartItems = JSON.parse(urlParams.get('items'));
+            const totalAmount = urlParams.get('total');
+            const taxAmount = urlParams.get('tax');
 
-        // Populate the tax and total amounts
-        $('#tax-amount').text('$' + taxAmount);
-        $('#total-amount').text('$' + totalAmount);
-      });
+
+            const cartItemsTable = $('#cart-items');
+            cartItemsTable.empty();
+            for (let item of cartItems) {
+                const row = $('<tr></tr>');
+                const itemName = $('<td></td>').text(item.name);
+                const itemPrice = $('<td></td>').text('$' + item.price.toFixed(2));
+                row.append(itemName, itemPrice);
+                cartItemsTable.append(row);
+            }
+
+
+            $('#tax-amount').text('$' + taxAmount);
+            $('#total-amount').text('$' + totalAmount);
+        });
     </script>
-  </body>
+</body>
+
 </html>
